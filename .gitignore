@@ -1,0 +1,8 @@
+# Virtual env
+BBenv/
+
+# Cache
+
+
+# DB
+db.sqlite3
