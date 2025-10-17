@@ -2,7 +2,8 @@
 BBenv/
 
 # Cache
-
+__pycache__/
+__pycache__
 
 # DB
 db.sqlite3
