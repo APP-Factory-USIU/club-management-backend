@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+        path('admin/', admin.site.urls),
+        urlpatterns = [
+            path('clubs/<int:id>/members/add', role_required(['super-user', 'club manager'])(views.add_member)),
+            path('clubs/<int:id>/members/<int:userId>/remove', role_required(['super-user', 'club manager'])(views.remove_member)),
+            path('clubs/<int:id>/members/<int:userId>/assign-role', role_required(['super-user', 'club manager'])(views.assign_role)),
 ]
